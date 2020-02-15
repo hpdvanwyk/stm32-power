@@ -1,0 +1,6 @@
+[submodule "libopencm3"]
+	path = libopencm3
+	url = https://github.com/libopencm3/libopencm3.git
+[submodule "power-monitor/libopencm3"]
+	path = power-monitor/libopencm3
+	url = https://github.com/libopencm3/libopencm3.git

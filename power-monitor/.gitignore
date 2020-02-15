@@ -1,0 +1,7 @@
+bin/
+*.elf
+*.bin
+*.hex
+generated.*.ld
+
+libopencm3

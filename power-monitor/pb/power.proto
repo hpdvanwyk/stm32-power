@@ -1,0 +1,21 @@
+syntax = "proto3";
+import "nanopb.proto";
+
+option go_package = "pb";
+
+message Power {
+    float CurrentRms = 1;
+    float RealPower = 2;
+    float ApparentPower = 3;
+    float PowerFactor = 4;
+    float DC = 5;
+    repeated uint32 Current = 6 [(nanopb).max_count = 176, (nanopb).fixed_count = true];
+}
+
+message PowerMessage {
+    repeated Power Powers = 1 [(nanopb).max_count = 3];
+    float VoltageRms = 2;
+    float DC = 3;
+    repeated uint32 Voltage = 4 [(nanopb).max_count = 176, (nanopb).fixed_count = true];
+}
+
