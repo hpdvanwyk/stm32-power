@@ -228,7 +228,6 @@ func (s *SensorExporter) exportPowerReading(pm *pb.PowerMessage) {
 		&VoltageOpts,
 		expiryTime,
 	)
-	fmt.Printf("Voltage %v\n", float64(pm.VoltageRms)/vCal)
 	for i, p := range pm.Powers {
 		iCal := s.config.Ical[i]
 		s.updateMetric(
@@ -266,12 +265,6 @@ func (s *SensorExporter) exportPowerReading(pm *pb.PowerMessage) {
 		timePassed := now.Sub(e.lastUpdated)
 		e.lastUpdated = now
 		e.energyUsed += (timePassed.Hours() * float64(p.RealPower) / (iCal * vCal)) / 1000
-
-		fmt.Printf("%v RealPower %v\n", i, float64(p.RealPower)/(iCal*vCal))
-		fmt.Printf("%v ApparentPower %v\n", i, float64(p.ApparentPower)/(iCal*vCal))
-		fmt.Printf("%v Current %v\n", i, float64(p.CurrentRms)/(iCal))
-		fmt.Printf("%v Power factor %v\n", i, p.PowerFactor)
-		fmt.Printf("%v Enegry %v kW h\n", i, e.energyUsed)
 	}
 }
 
