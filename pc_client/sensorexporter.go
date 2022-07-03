@@ -38,7 +38,7 @@ import (
 	"sync"
 	"time"
 
-	"powerclient/pb"
+	"github.com/hpdvanwyk/stm32-power/blob/master/pc_client/pb"
 
 	"github.com/prometheus/client_golang/prometheus"
 	"gonum.org/v1/plot"

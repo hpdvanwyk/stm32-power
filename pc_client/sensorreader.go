@@ -32,8 +32,9 @@ package main
 import (
 	"io"
 	"log"
-	"powerclient/pb"
 	"syscall"
+
+	"github.com/hpdvanwyk/stm32-power/blob/master/pc_client/pb"
 
 	gogoio "github.com/gogo/protobuf/io"
 	"go.bug.st/serial.v1"
